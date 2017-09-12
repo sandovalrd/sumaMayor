@@ -78,15 +78,13 @@ function maxSuma($arrayName){
 			$suma = $anArray[$i];
 		for($j=$i+1;$j<count($anArray);$j++){
 				$suma = $suma + $anArray[$j];
+				if($suma < $anArray[$j])
+					$suma = $anArray[$j];
 			if($suma>$maxSuma)
 				$maxSuma = $suma;
 		}
 	}
-	if (count($anArray) == 2 && $anArray[0]<0 )
-		if($anArray[0]>$anArray[1])
-			$maxSuma = $anArray[0];
-		else
-			$maxSuma = $anArray[1];
+
 	return $maxSuma;
 }
 
